@@ -17,20 +17,20 @@ public class Produto {
     @Column
     @NotBlank
     @Length(max = 150)
-    private String nome;
+    private static String nome;
 
     @Column
     @NotBlank
     @Length(max = 500)
-    private String urlImagem;
+    private static String urlImagem;
 
     @Column
     @Length(max = 1000)
-    private String descricao;
+    private static String descricao;
 
     @Column
     @Positive
-    private BigDecimal preco;
+    private static BigDecimal preco;
 
     @Column
     @Positive
@@ -39,11 +39,8 @@ public class Produto {
     @Column
     @NotBlank
     @Length(max = 10)
-    private String classeFiscal;
+    private static String classeFiscal;
 
-    public void setPrecoPromocional(BigDecimal precoPromocional) {
-        this.precoPromocional = precoPromocional;
-    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -57,7 +54,7 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public void setpreco(BigDecimal preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
@@ -65,23 +62,25 @@ public class Produto {
         this.precoPromocional = precoPromocional;
     }
 
+    public void setClasseFiscal (String classeFiscal) { this.classeFiscal = classeFiscal;}
+
     public Long getId() {
         return id;
     }
 
-    public String getNome() {
+    public static String getNome() {
         return nome;
     }
 
-    public String getimagemURL() {
+    public static String getUrlImagem() {
         return urlImagem;
     }
 
-    public String getDescricao() {
+    public static String getDescricao() {
         return descricao;
     }
 
-    public BigDecimal getPreco() {
+    public static BigDecimal getPreco() {
         return preco;
     }
 
@@ -89,4 +88,7 @@ public class Produto {
         return precoPromocional;
     }
 
+    public static String getClasseFiscal() {
+        return classeFiscal;
+    }
 }
